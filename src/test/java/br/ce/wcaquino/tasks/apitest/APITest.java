@@ -7,11 +7,11 @@ import org.junit.Test;
 import io.restassured.RestAssured;
 
 public class APITest {
-	
-	@BeforeClass	
+
+	@BeforeClass
 	public static void setup() {
-		RestAssured.baseURI = "http://localhost:8002/tasks-backend/todo";	
-		}
+		RestAssured.baseURI = "http://localhost:8001/tasks-backend/todo";
+	}
 
 	@Test
 	public void deveRetornarTarefas() {
