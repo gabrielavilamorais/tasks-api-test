@@ -32,7 +32,7 @@ public class APITest {
             .and()
             .body(requestBody)
             .when()
-	            .post("/add")
+	            .post("/")
             .then()
             	.statusCode(201)
 			;
@@ -47,7 +47,7 @@ public class APITest {
             .and()
             .body(requestBody)
            .when()
-	            .post("/add")
+	            .post("/")
             .then()
             	.log().all() 
             	.statusCode(400)
