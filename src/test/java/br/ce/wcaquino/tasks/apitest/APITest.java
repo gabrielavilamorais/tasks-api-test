@@ -55,5 +55,32 @@ public class APITest {
 			;
 	}
 	
+	@Test
+	public void deveRemoverTarefaComSucesso() {
+		//inserir
+		 String requestBody = "{ \"task\": \"Tarefa para remoção\", \"dueDate\": \"2022-12-30\" }";
+			Integer id = RestAssured.given()
+	            .header("Content-type", "application/json")
+	            .and()
+	            .body(requestBody)
+	            .when()
+		            .post("/")
+	            .then()
+	           // .log().all()
+	            	.statusCode(201)
+	            	.extract().path("id")
+				;
+			
+			System.out.println(id);
+		
+		//remover
+		RestAssured.given()
+		.when()
+			.delete("/todo/"+id)
+			.then()
+				.statusCode(204)
+			;	
+	}
+	
 }
 
