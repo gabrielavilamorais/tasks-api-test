@@ -76,7 +76,7 @@ public class APITest {
 		//remover
 		RestAssured.given()
 		.when()
-			.delete("/todo/"+id)
+			.delete("/"+id)
 			.then()
 				.statusCode(204)
 			;	
